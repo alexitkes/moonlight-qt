@@ -190,6 +190,8 @@ NvComputer::NvComputer(NvHTTP& http, QString serverInfo)
 
 bool NvComputer::wake()
 {
+    PortSettings * ps = PortSettings::getInstance();
+
     if (state == NvComputer::CS_ONLINE) {
         qWarning() << name << "is already online";
         return true;
@@ -202,7 +204,11 @@ bool NvComputer::wake()
 
     const quint16 WOL_PORTS[] = {
         9, // Standard WOL port (privileged port)
-        47998, 47999, 48000, 48002, 48010, // Ports opened by GFE
+        (quint16) ps->getPort_47998(),
+        (quint16) ps->getPort_47999(),
+        (quint16) ps->getPort_48000(),
+        (quint16) ps->getPort_48002(),
+        (quint16) ps->getPort_48010(), // Ports opened by GFE
         47009, // Port opened by Moonlight Internet Hosting Tool for WoL (non-privileged port)
     };
 

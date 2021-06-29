@@ -25,6 +25,8 @@ public:
     int getPort_48010() const;
     void setPort_48010(int value);
 
+    int getPort_48002() const;
+
     void update();
 
 private:

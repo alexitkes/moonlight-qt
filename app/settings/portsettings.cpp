@@ -87,6 +87,11 @@ void PortSettings::setPort_47984(int value)
     port_47984 = value;
 }
 
+int PortSettings::getPort_48002() const
+{
+    return 48002;
+}
+
 void PortSettings::update()
 {
     set_port_redirect(47984, port_47984);
