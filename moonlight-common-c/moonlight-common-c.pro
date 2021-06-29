@@ -63,7 +63,8 @@ SOURCES += \
     $$COMMON_C_DIR/src/SdpGenerator.c \
     $$COMMON_C_DIR/src/SimpleStun.c \
     $$COMMON_C_DIR/src/VideoDepacketizer.c \
-    $$COMMON_C_DIR/src/VideoStream.c
+    $$COMMON_C_DIR/src/VideoStream.c \
+    moonlight-common-c/src/PortRedirect.c
 HEADERS += \
     $$COMMON_C_DIR/src/Limelight.h
 INCLUDEPATH += \

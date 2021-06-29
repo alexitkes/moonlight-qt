@@ -1,5 +1,7 @@
 #include "portsettings.h"
 
+#include "../moonlight-common-c/moonlight-common-c/src/Limelight.h"
+
 PortSettings * PortSettings::getInstance()
 {
     if (!PortSettings::instance) {
@@ -83,6 +85,16 @@ int PortSettings::getPort_47984() const
 void PortSettings::setPort_47984(int value)
 {
     port_47984 = value;
+}
+
+void PortSettings::update()
+{
+    set_port_redirect(47984, port_47984);
+    set_port_redirect(47989, port_47989);
+    set_port_redirect(47998, port_47998);
+    set_port_redirect(47999, port_47999);
+    set_port_redirect(44800, port_48000);
+    set_port_redirect(48010, port_48010);
 }
 
 PortSettings * PortSettings::instance;

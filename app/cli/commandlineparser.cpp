@@ -1,7 +1,9 @@
 #include "commandlineparser.h"
+#include "../settings/portsettings.h"
 
 #include <QCommandLineParser>
 #include <QRegularExpression>
+#include <QDebug>
 
 #if defined(Q_OS_WIN)
 #include <qt_windows.h>
@@ -453,6 +455,46 @@ void StreamCommandLineParser::parse(const QStringList &args, StreamingPreference
         parser.showError("App not provided");
     }
     m_AppName = parser.positionalArguments().at(2);
+
+    PortSettings * ps = PortSettings::getInstance();
+
+    if (parser.isSet("port-47984")) {
+        qDebug() << "Using port" << parser.getIntOption("port-47984") << "instead of 47984";
+
+        ps->setPort_47984(parser.getIntOption("port-47984"));
+    }
+
+    if (parser.isSet("port-47989")) {
+        qDebug() << "Using port" << parser.getIntOption("port-47989") << "instead of 47989";
+
+        ps->setPort_47989(parser.getIntOption("port-47989"));
+    }
+
+    if (parser.isSet("port-47998")) {
+        qDebug() << "Using port" << parser.getIntOption("port-47998") << "instead of 47998";
+
+        ps->setPort_47998(parser.getIntOption("port-47998"));
+    }
+
+    if (parser.isSet("port-47999")) {
+        qDebug() << "Using port" << parser.getIntOption("port-47999") << "instead of 47999";
+
+        ps->setPort_47999(parser.getIntOption("port-47999"));
+    }
+
+    if (parser.isSet("port-48000")) {
+        qDebug() << "Using port" << parser.getIntOption("port-48000") << "instead of 48000";
+
+        ps->setPort_48000(parser.getIntOption("port-48000"));
+    }
+
+    if (parser.isSet("port-48010")) {
+        qDebug() << "Using port" << parser.getIntOption("port-48010") << "instead of 48010";
+
+        ps->setPort_48010(parser.getIntOption("port-48010"));
+    }
+
+    ps->update();
 }
 
 QString StreamCommandLineParser::getHost() const

@@ -1,6 +1,7 @@
 #include "nvcomputer.h"
 #include "nvapp.h"
 #include "settings/compatfetcher.h"
+#include "settings/portsettings.h"
 
 #include <QUdpSocket>
 #include <QHostInfo>

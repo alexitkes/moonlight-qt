@@ -1,4 +1,6 @@
 #include "nvcomputer.h"
+#include "nvhttp.h"
+#include "settings/portsettings.h"
 #include <Limelight.h>
 
 #include <QDebug>
@@ -21,8 +23,12 @@
 NvHTTP::NvHTTP(NvAddress address, uint16_t httpsPort, QSslCertificate serverCert) :
     m_ServerCert(serverCert)
 {
+    PortSettings * ps = PortSettings::getInstance();
+
     m_BaseUrlHttp.setScheme("http");
     m_BaseUrlHttps.setScheme("https");
+    m_BaseUrlHttp.setPort(ps->getPort_47989());
+    m_BaseUrlHttps.setPort(ps->getPort_47984());
 
     setAddress(address);
     setHttpsPort(httpsPort);

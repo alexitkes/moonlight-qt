@@ -134,6 +134,7 @@ SOURCES += \
     cli/startstream.cpp \
     settings/compatfetcher.cpp \
     settings/mappingfetcher.cpp \
+    settings/portsettings.cpp \
     settings/streamingpreferences.cpp \
     streaming/input/abstouch.cpp \
     streaming/input/clipboard.cpp \
@@ -161,6 +162,7 @@ HEADERS += \
     backend/nvapp.h \
     settings/compatfetcher.h \
     settings/mappingfetcher.h \
+    settings/portsettings.h \
     utils.h \
     backend/computerseeker.h \
     backend/identitymanager.h \
