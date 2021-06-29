@@ -40,6 +40,7 @@
 #include "streaming/session.h"
 #include "settings/streamingpreferences.h"
 #include "gui/sdlgamepadkeynavigation.h"
+#include "settings/portsettings.h"
 
 #if !defined(QT_DEBUG) && defined(Q_OS_WIN32)
 // Log to file for release Windows builds
@@ -262,6 +263,8 @@ int main(int argc, char *argv[])
         // Initialize paths for standard installation
         Path::initialize(false);
     }
+
+    PortSettings::getInstance()->update();
 
 #ifdef USE_CUSTOM_LOGGER
 #ifdef LOG_TO_FILE
