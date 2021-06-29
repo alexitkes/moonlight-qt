@@ -12,19 +12,19 @@ PortSettings * PortSettings::getInstance()
 
 PortSettings::PortSettings()
 {
-    port_47984 = 51004;
-    port_47989 = 51003;
-    port_47998 = 51000;
-    port_47999 = 51001;
-    port_48000 = 51002;
-    port_48010 = 51005;
+//    port_47984 = 51004;
+//    port_47989 = 51003;
+//    port_47998 = 51000;
+//    port_47999 = 51001;
+//    port_48000 = 51002;
+//    port_48010 = 51005;
 
-//    port_47984 = 47984;
-//    port_47989 = 47989;
-//    port_47998 = 47998;
-//    port_47999 = 47999;
-//    port_48000 = 48000;
-//    port_48010 = 48010;
+    port_47984 = 47984;
+    port_47989 = 47989;
+    port_47998 = 47998;
+    port_47999 = 47999;
+    port_48000 = 48000;
+    port_48010 = 48010;
 }
 
 int PortSettings::getPort_48010() const
